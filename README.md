@@ -24,4 +24,4 @@
 - Métodos utilizados: GET e POST.
 - Feit o cadastro de usuário (POST), conferir cadastro (POST), teste de usuário já cadastrado (POST), busca de usuário específico (GET)
 
-## 💬 Assim finalizo o curso, para os próximos repositórios adicionarei os desafíos propostos neste curso.
+💬 Assim finalizo o curso, para os próximos repositórios adicionarei os desafíos propostos neste curso.
