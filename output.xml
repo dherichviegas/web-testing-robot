@@ -1,41 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.12.1 on win32)" generated="20240116 10:17:46.730" rpa="false" schemaversion="4">
-<suite id="s1" name="Api Testing Usuarios" source="c:\projetos\Robot\WebTesting\web-testing-robot\ApiTesting\tests\api_testing_usuarios.robot">
-<test id="s1-t1" name="Cenário 01: Cadastrar um novo usuário com sucesso na ServeRest" line="6">
-<kw name="Criar um usuário novo" library="api_testing_usuarios">
-<kw name="Generate Random String" library="String">
-<var>${palavra_aleatoria}</var>
-<arg>length=4</arg>
-<arg>chars=[LETTERS]</arg>
-<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
-<msg timestamp="20240116 10:17:46.874" level="INFO">${palavra_aleatoria} = FrXM</msg>
-<status status="PASS" starttime="20240116 10:17:46.874" endtime="20240116 10:17:46.877"/>
-</kw>
-<kw name="Convert To Lower Case" library="String">
-<var>${palavra_aleatoria}</var>
-<arg>${palavra_aleatoria}</arg>
-<doc>Converts string to lower case.</doc>
-<msg timestamp="20240116 10:17:46.878" level="INFO">${palavra_aleatoria} = frxm</msg>
-<status status="PASS" starttime="20240116 10:17:46.878" endtime="20240116 10:17:46.878"/>
-</kw>
-<kw name="Set Test Variable" library="BuiltIn">
-<arg>${EMAIL_TESTE}</arg>
-<arg>${palavra_aleatoria}@emailteste.com</arg>
-<doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<msg timestamp="20240116 10:17:46.879" level="INFO">${EMAIL_TESTE} = frxm@emailteste.com</msg>
-<status status="PASS" starttime="20240116 10:17:46.878" endtime="20240116 10:17:46.879"/>
+<robot generator="Robot 6.1.1 (Python 3.12.1 on win32)" generated="20240126 10:33:08.569" rpa="false" schemaversion="4">
+<suite id="s1" name="ExemplosArgumentos" source="c:\projetos\Robot\WebTesting\web-testing-robot\variaveis\ExemplosArgumentos.robot">
+<test id="s1-t1" name="Caso de teste de exemplo 01" line="10">
+<kw name="Uma keyword qualquer 01">
+<kw name="Uma subkeyword com argumentos">
+<arg>David Silva</arg>
+<arg>bruno_silva@teste.com.br</arg>
+<kw name="Log" library="BuiltIn">
+<arg>Nome Usuário: ${NOME_USUARIO}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240126 10:33:08.603" level="INFO">Nome Usuário: David Silva</msg>
+<status status="PASS" starttime="20240126 10:33:08.603" endtime="20240126 10:33:08.605"/>
 </kw>
 <kw name="Log" library="BuiltIn">
-<arg>${EMAIL_TESTE}</arg>
+<arg>Email: ${EMAIL_USUARIO}</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20240116 10:17:46.880" level="INFO">frxm@emailteste.com</msg>
-<status status="PASS" starttime="20240116 10:17:46.880" endtime="20240116 10:17:46.880"/>
+<msg timestamp="20240126 10:33:08.606" level="INFO">Email: bruno_silva@teste.com.br</msg>
+<status status="PASS" starttime="20240126 10:33:08.606" endtime="20240126 10:33:08.606"/>
 </kw>
-<status status="PASS" starttime="20240116 10:17:46.874" endtime="20240116 10:17:46.880"/>
+<status status="PASS" starttime="20240126 10:33:08.602" endtime="20240126 10:33:08.607"/>
 </kw>
-<status status="PASS" starttime="20240116 10:17:46.872" endtime="20240116 10:17:46.881"/>
+<kw name="Uma subkeyword com argumentos">
+<arg>${PESSOA.nome}</arg>
+<arg>${PESSOA.email}</arg>
+<kw name="Log" library="BuiltIn">
+<arg>Nome Usuário: ${NOME_USUARIO}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240126 10:33:08.609" level="INFO">Nome Usuário: Denise Fernandes</msg>
+<status status="PASS" starttime="20240126 10:33:08.608" endtime="20240126 10:33:08.609"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Email: ${EMAIL_USUARIO}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240126 10:33:08.609" level="INFO">Email: denifernandes@exemplo.com.br</msg>
+<status status="PASS" starttime="20240126 10:33:08.609" endtime="20240126 10:33:08.609"/>
+</kw>
+<status status="PASS" starttime="20240126 10:33:08.607" endtime="20240126 10:33:08.610"/>
+</kw>
+<kw name="Uma subkeyword com retorno">
+<var>${MENSAGEM_ALERTA}</var>
+<arg>${PESSOA.nome}</arg>
+<arg>${PESSOA.idade}</arg>
+<kw name="Set Variable If" library="BuiltIn">
+<var>${MENSAGEM}</var>
+<arg>${IDADE_USUARIO}&lt;18</arg>
+<arg>Não autorizado! O usuário ${NOME_USUARIO} é menor de idade!</arg>
+<arg>OK!Usuário é maior de idade!</arg>
+<doc>Sets variable based on the given condition.</doc>
+<msg timestamp="20240126 10:33:08.612" level="INFO">${MENSAGEM} = OK!Usuário é maior de idade!</msg>
+<status status="PASS" starttime="20240126 10:33:08.611" endtime="20240126 10:33:08.612"/>
+</kw>
+<return>
+<value>${MENSAGEM}</value>
+<status status="PASS" starttime="20240126 10:33:08.612" endtime="20240126 10:33:08.612"/>
+</return>
+<msg timestamp="20240126 10:33:08.612" level="INFO">${MENSAGEM_ALERTA} = OK!Usuário é maior de idade!</msg>
+<status status="PASS" starttime="20240126 10:33:08.610" endtime="20240126 10:33:08.613"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${MENSAGEM_ALERTA}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240126 10:33:08.613" level="INFO">OK!Usuário é maior de idade!</msg>
+<status status="PASS" starttime="20240126 10:33:08.613" endtime="20240126 10:33:08.613"/>
+</kw>
+<status status="PASS" starttime="20240126 10:33:08.601" endtime="20240126 10:33:08.613"/>
+</kw>
+<status status="PASS" starttime="20240126 10:33:08.600" endtime="20240126 10:33:08.614"/>
 </test>
-<status status="PASS" starttime="20240116 10:17:46.735" endtime="20240116 10:17:46.882"/>
+<doc>Exemplo de uso de variáveis como argumentos em Keywords</doc>
+<status status="PASS" starttime="20240126 10:33:08.575" endtime="20240126 10:33:08.616"/>
 </suite>
 <statistics>
 <total>
@@ -44,7 +77,7 @@
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Api Testing Usuarios">Api Testing Usuarios</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="ExemplosArgumentos">ExemplosArgumentos</stat>
 </suite>
 </statistics>
 <errors>
