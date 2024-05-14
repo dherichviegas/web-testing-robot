@@ -17,3 +17,11 @@
 - Criação da pasta Variáreis
 - Inclusão de arquivos contendo variáveis do tipo: Simples, Lista e Dicionário
 - Resolução de desafios: criar um teste case com varável do tipo Lis e Dicionário
+
+## Parte 4:
+- Testando API com Robot Framework
+- Utilizando a API REST do https://serverest.dev
+- Métodos utilizados: GET e POST.
+- Feit o cadastro de usuário (POST), conferir cadastro (POST), teste de usuário já cadastrado (POST), busca de usuário específico (GET)
+
+💬 Assim finalizo o curso, para os próximos repositórios adicionarei os desafíos propostos neste curso.
